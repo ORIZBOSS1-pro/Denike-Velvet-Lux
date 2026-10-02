@@ -1,0 +1,506 @@
+:root {
+  --primary: #111111;
+  --accent: #d4af37; /* Gold color */
+  --accent-hover: #b89628;
+  --bg-light: #fdfbf7;
+  --card-bg: #ffffff;
+  --text-dark: #222222;
+  --text-muted: #666666;
+  --whatsapp-color: #25D366;
+  --tiktok-color: #fe2c55;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding-bottom: 60px;
+}
+
+/* Header & Navigation */
+header {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-toggle-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.logo {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.cart-icon-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-badge {
+  background-color: var(--accent);
+  color: var(--primary);
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* --- LEFT SIDE NAVIGATION DRAWER (FARFETCH STYLE) --- */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 250;
+  display: none;
+}
+
+.nav-overlay.active {
+  display: block;
+}
+
+/* Navigation Drawer Layout & Typography */
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  max-width: 380px;
+  height: 100%;
+  background: #ffffff;
+  z-index: 300;
+  transition: left 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.nav-drawer.active {
+  left: 0;
+}
+
+.nav-header {
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.close-nav {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+  color: #111;
+  line-height: 1;
+}
+
+/* Category Tabs Header */
+.nav-tabs {
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 1.5rem;
+  margin-top: 1rem;
+}
+
+.nav-tab {
+  background: none;
+  border: none;
+  padding: 0.8rem 0;
+  margin-right: 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #888888;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.nav-tab.active {
+  color: #111111;
+}
+
+.nav-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #111111;
+}
+
+/* Content & Sliding Animation */
+.nav-content-container {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.nav-slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.nav-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+/* List Styling matching DV menu design */
+.nav-list {
+  list-style: none;
+  padding: 1rem 1.5rem;
+}
+
+.nav-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  color: #111111;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-list a span {
+  font-size: 1.1rem;
+  color: #111111;
+  font-weight: 300;
+}
+
+.nav-homepage {
+  font-weight: 600 !important;
+  color: #111111 !important;
+  margin-bottom: 0.5rem;
+}
+
+.sale-link {
+  color: #d9383a !important;
+}
+
+.sale-link span {
+  color: #d9383a !important;
+}
+
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80') center/cover;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-bottom: 25px;
+}
+
+.btn-outline {
+  text-decoration: none;
+  border: 1px solid black;
+  color: gold;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.btn-outline:hover {
+  background: blue;
+  color: white;
+}
+
+/* Container & Store Grid */
+.container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  position: relative;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.section-title::after {
+  content: '';
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  display: block;
+  margin: 10px auto 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Product Card */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+  margin-top: auto;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--accent);
+  color: var(--primary);
+}
+
+/* Slide-out Cart Modal */
+.cart-modal {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+  transition: right 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-modal.active {
+  right: 0;
+}
+
+.cart-header {
+  background: var(--primary);
+  color: #fff;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-items {
+  padding: 1.5rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-details h4 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 4px;
+}
+
+.cart-item-details span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.cart-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.checkout-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.checkout-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-checkout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: opacity 0.3s;
+}
+
+.btn-checkout:hover {
+  opacity: 0.9;
+}
+
+.btn-whatsapp {
+  background-color: var(--whatsapp-color);
+}
+
+.btn-tiktok {
+  background-color: var(--tiktok-color);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}

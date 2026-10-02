@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denike Velvet Lux — Fine Jewelry & Custom Accessories</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary Express Delivery Across Nigeria on Orders Over ₦100,000
+  </div>
+
+  <!-- Main Sticky Header -->
+  <header>
+      <div class="logo">DENIKE VELVET LUX</div>
+    </div>
+    
+    <nav class="desktop-nav">
+      <a href="#collection">Products</a>
+      <a href="#about">About Me</a>
+      <a href="#schedule">Schedule Service</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-subtitle">Handcrafted Luxury & Heritage</span>
+      <h1>Regal Elegance Redefined</h1>
+      <p>Discover denike fine jewelry, authentic coral bridal sets, and timeless non-tarnish daily wear designed to empower your inner royalty.</p>
+      <div class="hero-cta-group">
+        <a href="office.html" class="btn btn-gold">Explore Collection</a>
+        <a href="#schedule" class="btn btn-outline">Book Private Denike Session</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me / Brand Section -->
+  <section class="about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-image-wrapper">
+        <img src="denike.jpeg" alt="Creative Director Denike">
+        <div class="about-badge">Denike Artisan</div>
+      </div>
+      <div class="about-content">
+        <span class="section-tag">Meet the Visionary</span>
+        <h2>About Denike & The Velvet Lux Heritage</h2>
+        <p>Founded by <strong>Denike</strong>, Denike Velvet Lux is a celebration of opulent African craftsmanship blended with modern minimalist luxury. Our mission is to craft fine jewelry pieces that do not just adorn, but tell a story of royalty, confidence, and enduring beauty.</p>
+        <p>From custom 18k solid gold wedding bands to richly strung traditional Edo and Yoruba coral beads, every piece is handcrafted with precision, authenticity, and non-tarnish materials tailored for the modern connoisseur.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <h3>100%</h3>
+            <p>Authentic Materials</p>
+          </div>
+          <div class="stat">
+            <h3>5k+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat">
+            <h3>Custom</h3>
+            <p>Bridal Bespoke</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Showcase -->
+  <main class="container" id="collection">
+    <div class="section-header">
+      <span class="section-tag">Our Curated Catalog</span>
+      <h2 class="section-title">The Lux Products</h2>
+      <p class="section-desc">Handpicked Nigerian and global luxury pieces at accessible prices.</p>
+    </div>
+
+    <!-- Product Category Quick Filter -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCategory('all', this)">All Items</button>
+      <button class="filter-btn" onclick="filterCategory('womenswear', this)">Womenswear</button>
+      <button class="filter-btn" onclick="filterCategory('menswear', this)">Menswear</button>
+      <button class="filter-btn" onclick="filterCategory('bridal', this)">Bridal & Coral</button>
+    </div>
+
+    <div class="grid" id="productGrid">
+      <!-- Products injected dynamically via JavaScript -->
+    </div>
+  </main>
+
+  <!-- Schedule a Service Section -->
+  <section class="schedule-section" id="schedule">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag">Denike Concierge</span>
+        <h2 class="section-title">Schedule a Private Appointment</h2>
+        <p class="section-desc">Book a 1-on-1 consultation for custom bridal coral stringing, ring sizing, or custom gold design.</p>
+      </div>
+
+      <form class="schedule-form" onsubmit="handleScheduleSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="schedName">Full Name</label>
+            <input type="text" id="schedName" placeholder="e.g. Denike Velvet" required>
+          </div>
+          <div class="form-group">
+            <label for="schedPhone">WhatsApp / Phone Number</label>
+            <input type="tel" id="schedPhone" placeholder="+234 800 000 0000" required>
+          </div>
+          <div class="form-group">
+            <label for="schedService">Select Service</label>
+            <select id="schedService" required>
+              <option value="">-- Choose a Service --</option>
+              <option value="Custom Bridal Coral Consultation">Custom Bridal Coral Consultation (Ileke / Calabar Cape)</option>
+              <option value="Bespoke Wedding Band Design">Bespoke Wedding Band Design</option>
+              <option value="Jewelry Cleaning & Restoration">Jewelry Restoration & Cleaning</option>
+              <option value="Private Showroom VIP Viewing">Private VIP Showroom Viewing</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="schedDate">Preferred Date & Time</label>
+            <input type="datetime-local" id="schedDate" required>
+          </div>
+        </div>
+        <div class="form-group" style="margin-top: 1rem;">
+          <label for="schedNotes">Additional Request / Custom Notes</label>
+          <textarea id="schedNotes" rows="3" placeholder="Tell us about your event date, wedding theme, or budget preferences..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold btn-full">Book Appointment via WhatsApp Concierge</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Get in Touch Section -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="section-tag">Direct Contact</span>
+        <h2>Get In Touch</h2>
+        <p>Have questions about sizes, custom orders, or instant Lagos/Abuja delivery? Reach out directly through any of our channels.</p>
+
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Showroom Address</h4>
+            <p>12, Ore Ofe Way, Ntabo Ijoko, Sango Ota, Ogun State, Nigeria</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">💬</div>
+          <div>
+            <h4>Instant WhatsApp Orders</h4>
+            <p>+234 703 130 4508</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Email Inquiry</h4>
+            <p>oriowoadenike90@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">📸</div>
+          <div>
+            <h4>TikTok & Instagram</h4>
+            <p>@denii.ke</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+  <h3>Send Us an Email Message</h3>
+  <form id="emailContactForm" onsubmit="handleEmailSubmit(event)">
+    <div class="form-group">
+      <label for="contactName">Your Name</label>
+      <input type="text" id="contactName" placeholder="Enter your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="contactEmail">Your Email Address</label>
+      <input type="email" id="contactEmail" placeholder="e.g. name@example.com" required>
+    </div>
+    <div class="form-group">
+      <label for="contactSubject">Subject</label>
+      <input type="text" id="contactSubject" placeholder="e.g. Inquiry about Custom Bridal Set" required>
+    </div>
+    <div class="form-group">
+      <label for="contactMessage">Message</label>
+      <textarea id="contactMessage" rows="4" placeholder="How can we assist you today?" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-dark btn-full">Send Message via Email</button>
+  </form>
+</div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter Signup Section -->
+  <section class="newsletter-section">
+    <div class="container newsletter-content">
+      <span class="section-tag">Exclusive Privileges</span>
+      <h2>Join The Velvet Lux Club</h2>
+      <p>Subscribe to receive early access to new Nigerian coral collections, flash sales, and private styling advice directly in your inbox.</p>
+
+      <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email address..." required>
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo footer-logo">DENIKE VELVET LUX</div>
+        <p>Your premier destination for timeless luxury, bespoke bridal coral sets, and non-tarnish fine jewelry in Nigeria.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#collection">Shop Collection</a></li>
+          <li><a href="#about">About Denike</a></li>
+          <li><a href="#schedule">Book Consultation</a></li>
+          <li><a href="#contact">Showroom Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#collection" onclick="filterCategory('womenswear')">Womenswear</a></li>
+          <li><a href="#collection" onclick="filterCategory('menswear')">Menswear</a></li>
+          <li><a href="#collection" onclick="filterCategory('bridal')">Bridal & Coral Sets</a></li>
+          <li><a href="#collection" onclick="filterCategory('all')">Custom Orders</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Denike Velvet Lux. All Rights Reserved. Built for Regal Beauty.
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

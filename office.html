@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denike Velvet Lux</title>
+  <link rel="stylesheet" href="office.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <!-- Hamburger Icon Button to open Left Navigation -->
+      <button class="menu-toggle-btn" onclick="toggleNav()">
+        ☰
+      </button>
+      <div class="logo">Denike Velvet</div>
+    </div>
+    
+    <button class="cart-icon-btn" onclick="toggleCart()">
+      🛒 Cart <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+  </header>
+
+  <!-- Left Side Navigation Menu (Farfetch / DV Style) -->
+<div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+<aside class="nav-drawer" id="navDrawer">
+  <div class="nav-header">
+    <div class="nav-logo">DV</div>
+    <button class="close-nav" onclick="toggleNav()">&times;</button>
+  </div>
+
+  <!-- Category Tabs -->
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="switchTab('womenswear', this)">WOMENSWEAR</button>
+    <button class="nav-tab" onclick="switchTab('menswear', this)">MENSWEAR</button>
+    <button class="nav-tab" onclick="switchTab('bridal', this)">BRIDAL</button>
+  </div>
+
+  <!-- Dynamic Content Container -->
+  <div class="nav-content-container" id="navContentContainer">
+    <!-- Womenswear Section -->
+    <div class="nav-slide active" id="slide-womenswear">
+      <ul class="nav-list">
+        <li><a href="#" class="nav-homepage">Womenswear homepage</a></li>
+        <li><a href="#">25% off <span>›</span></a></li>
+        <li><a href="#">New in <span>›</span></a></li>
+        <li><a href="#">Best Sellers <span>›</span></a></li>
+        <li><a href="#">Rings <span>›</span></a></li>
+        <li><a href="#">Necklaces <span>›</span></a></li>
+        <li><a href="#">Earrings <span>›</span></a></li>
+        <li><a href="#">Bracelets <span>›</span></a></li>
+        <li><a href="#">Fine Jewelry <span>›</span></a></li>
+        <li><a href="#">Pre-owned <span>›</span></a></li>
+        <li><a href="#" class="sale-link">Sale <span>›</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Menswear Section -->
+    <div class="nav-slide" id="slide-menswear">
+      <ul class="nav-list">
+        <li><a href="#" class="nav-homepage">Menswear homepage</a></li>
+        <li><a href="#">New in <span>›</span></a></li>
+        <li><a href="#">Glasses <span>›</span></a></li>
+        <li><a href="#">Rings<span>›</span></a></li>
+        <li><a href="#">Necklaces & Chains <span>›</span></a></li>
+        <li><a href="#">Earrings & Studs <span>›</span></a></li>
+        <li><a href="#">Bangles<span>›</span></a></li>
+        <li><a href="#">Belts<span>›</span></a></li>
+        <li><a href="#">Wrist Watch<span>›</span></a></li>
+        <li><a href="#">Pre-owned<span>›</span></a></li>
+        <li><a href="#" class="sale-link">Sale <span>›</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Bridal Section -->
+    <div class="nav-slide" id="slide-bridal">
+      <ul class="nav-list">
+        <li><a href="#" class="nav-homepage">Bridal homepage</a></li>
+        <li><a href="#">25% off <span>›</span></a></li>
+        <li><a href="#">New in <span>›</span></a></li>
+        <li><a href="#">Best Sellers <span>›</span></a></li>
+        <li><a href="#">Engagement Rings <span>›</span></a></li>
+        <li><a href="#">Wedding Bands <span>›</span></a></li>
+        <li><a href="#">Coral Bridal Sets <span>›</span></a></li>
+        <li><a href="#">Bridal Earrings <span>›</span></a></li>
+        <li><a href="#">Fine Jewelry <span>›</span></a></li>
+        <li><a href="#">Pre-owned <span>›</span></a></li>
+        <li><a href="#" class="sale-link">Sale <span>›</span></a></li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h1>Timeless Elegance & Royal Velvet</h1>
+    <p>Handcrafted fine jewelry designed to illuminate your regal beauty.</p>
+    <a href="index.html" class="btn btn-outline">Home/Service ←</a>
+  </section>
+
+  <!-- Main Store Section -->
+  <main class="container">
+    <h2 class="section-title">Exclusive Collection</h2>
+    <div class="grid" id="productGrid">
+      <!-- Products injected via JS -->
+    </div>
+  </main>
+
+  <!-- Right Shopping Cart Modal -->
+  <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-header">
+      <h3>Your Shopping Bag</h3>
+      <button class="close-cart" onclick="toggleCart()">&times;</button>
+    </div>
+    
+    <div class="cart-items" id="cartItemsContainer">
+      <p style="text-align: center; color: var(--text-muted); margin-top: 2rem;">Your cart is empty.</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotalAmount">₦0</span>
+      </div>
+      <p class="checkout-title">Select Payment / Order Method</p>
+      <div class="checkout-buttons">
+        <button class="btn-checkout btn-whatsapp" onclick="checkoutWhatsApp()">
+          Order via WhatsApp
+        </button>
+        <button class="btn-checkout btn-tiktok" onclick="checkoutTikTok()">
+          Order via TikTok Direct Message
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="office.js"></script>
+</body>
+</html>
