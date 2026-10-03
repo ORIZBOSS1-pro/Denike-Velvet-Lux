@@ -6,14 +6,29 @@ const products = [
     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80"
   },
   {
-    id: 3,
+    id: 2,
     category: "bridal",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOz_0hUuFeJ1xZxowI8i2aR3-jHEoJs_e23x696LJljX7I8LP1NUwna7k&s=10"
   },
   {
-    id: 4,
-    category: "menswear",
-    image: "https://www.croghansjewelbox.com/cdn/shop/files/175-00458-styled-1.jpg?v=1776703603&width=2048"
+    id: 3,
+    category: "womenswear",
+    image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/55/9289814/1.jpg?6160"
+  },
+  {
+  id: 4,
+  category: "bridal",
+  image: "https://pictures-nigeria.jijistatic.net/205913724_NjIwLTgyNy1iYjJiM2IyNjZh.webp"
+  },
+  {
+  id: 5,
+  category: "menswear",
+  image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/22/3633914/1.jpg?7041"
+  },
+  {
+  id: 6,
+  category: "menswear",
+  image: "https://img.ltwebstatic.com/v4/j/spmp/2025/11/09/07/1762674024bf17acef696145f98351db1decef9788_thumbnail_750x999.jpg"
   },
 ];
 

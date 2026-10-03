@@ -264,6 +264,7 @@ header {
   color: gold;
   border-radius: 15px;
   padding: 10px;
+  font-weight: bold;
 }
 
 .btn-outline:hover {
